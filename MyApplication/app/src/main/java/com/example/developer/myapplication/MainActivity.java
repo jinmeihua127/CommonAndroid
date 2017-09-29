@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
+import android.widget.ImageView;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Animation;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -30,5 +32,12 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+    }
+
+    public void clockwise(View view){
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.myanimation);
+        image.startAnimation(animation);
     }
 }
